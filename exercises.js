@@ -20,11 +20,14 @@ console.log(`The result for calculator execrise is: ${arrowCalculator(6, 3, '*')
 //************************************************************************************//
 // is the word a palindrome?
 const isPalindrome = (wordToCheckPalindrome) => {
-    var len = wordToCheckPalindrome.length;
-    for (var i = 0; i < len/2; i++) { // check until half of the string
-        if (wordToCheckPalindrome[i] !== wordToCheckPalindrome[len - 1 - i]) { // compare the first and last element i nthe first iteration
+    init = 0
+    end = wordToCheckPalindrome.length;
+    while (init < end) { // check until half of the string
+        if (wordToCheckPalindrome[init] !== wordToCheckPalindrome[end - 1]) { // compare the first and last element i nthe first iteration
             return false; // 
         }
+        init ++
+        end --
     }
     return true // if all the letters are equal, then return true
 }
@@ -35,12 +38,14 @@ console.log(`The result for is a palindrome is: ${isPalindrome('salas')}`)
 //************************************************************************************//
 // reverse string
 const reverseString = (stringToReverse) => {
-    const len = stringToReverse.length
-    let aux = ''
-    for (var i = 0; i < len; i++) { 
-        aux = aux + stringToReverse[len-1-i]
+    let stringEnd = stringToReverse.length
+    let reversedString = ''
+
+    for (var i = 0; i < stringToReverse.length; i++) { 
+        reversedString = reversedString + stringToReverse[stringEnd-1]
+        stringEnd--
     }
-    return aux
+    return reversedString
 }
 
 console.log(`The result for reverse string is: ${reverseString('leo')}`)
@@ -52,7 +57,7 @@ function orderString(str) {
     // Convert string to array of char
     let arr = str.split('');
     
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length -1; i++) {
         if (arr[i] > arr[i + 1]) {
           let temp = arr[i];
           arr[i] = arr[i + 1];

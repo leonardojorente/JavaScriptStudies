@@ -47,8 +47,8 @@ let value1 = 0;
 let value2 = "Hello";
 
 console.log(value1 ?? value2);  // Output: 0  (since value1 is not null or undefined)
-console.log(value1 || value2);  // Output: "Hello" (since value1 is falsy)
+console.log(value1 || value2);  // Output: "Hello" (since value1 is false)
 //In the first case with ??, value1 is 0, so the result is 0 because 0 is not null or undefined.
-//In the second case with ||, value1 is 0, which is a falsy value, so the result is "Hello".
+//In the second case with ||, value1 is 0, which is a false value, so the result is "Hello".
 
 //node decision_structures.js
